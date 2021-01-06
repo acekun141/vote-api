@@ -11,6 +11,7 @@ export interface TokenResult {
 }
 
 export interface TokenPayload {
+  id: string;
   username: string;
   role: 'user' | 'admin';
 }

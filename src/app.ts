@@ -34,8 +34,8 @@ class App {
   private initializePassport() {
     this.app.use(passport.initialize());
     this.app.use(passport.session());
-    passport.serializeUser((user: { username: string }, done) => {
-      done(null, user.username);
+    passport.serializeUser((user: { username: string, id: string }, done) => {
+      done(null, user.id);
     })
     const strategyConfig = {
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
